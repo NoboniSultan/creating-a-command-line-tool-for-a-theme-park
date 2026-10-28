@@ -1,4 +1,6 @@
-"""
+""" 
+this is a docstring for the ParkPulse project
+
 ParkPulse — Week 1
 
 Project context:
@@ -18,7 +20,10 @@ Attraction data:
 
 # TODO 1:
 # Store the attraction data above in clearly named variables.
-#
+name = "Sky Loop"
+max_capacity = 24
+current_riders = 20
+is_open = True 
 # Think about:
 # - Which Python data type fits each value?
 # - Which names follow snake_case?
@@ -27,14 +32,14 @@ Attraction data:
 
 # TODO 2:
 # Calculate the attraction's utilization.
-#
+
 # Utilization means:
 # current riders divided by maximum capacity
 #
 # Before running your code, predict the type and value
 # of the expression you write.
-
-
+utilization = current_riders / max_capacity
+print(utilization) 
 # TODO 3:
 # Use print() and an f-string to display a readable status message.
 #
@@ -42,7 +47,9 @@ Attraction data:
 # - the attraction name
 # - its utilization as a percentage
 # - whether the attraction is open
-
+print(f"Attraction: {name}")
+print(f"Utilization is: {utilization: .2%}")
+print(f"Status: {'Open' if is_open else 'Closed'}")
 
 # TODO 4:
 # Review your code before you finish.
