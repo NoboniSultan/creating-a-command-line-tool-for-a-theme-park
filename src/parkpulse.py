@@ -59,3 +59,6 @@ print(f"Status: {'Open' if is_open else 'Closed'}")
 # - spaces around operators
 # - four-space indentation if you use indentation
 # - no unnecessary semicolons or braces
+
+# == vs is: what's the difference?
+# == checks for equality of values, while is checks for identity (whether two variables point to the same object in memory). In this case, we use is to check if the attraction is open
