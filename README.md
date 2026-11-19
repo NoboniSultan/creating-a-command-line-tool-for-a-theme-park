@@ -131,12 +131,47 @@ I'm testing a Python command-line menu. It accepts a menu choice from 1 to 5, a 
 - [ ] Tasks A–D: input is validated, the menu repeats until Exit + Y, and the queue run and summary match.
 - [ ] Task E: no input crashes the program, and I tested the AI's hostile inputs.
 - [ ] My work is pushed to `Week_3`.
+- [ ] Ship it: no `TODO` notes left, `Week_3` merged into `main`, the project README is on `main`, and a fresh clone runs.
 
 ## 8. Commit and push
 
-Push your work to `Week_3`. Don't merge into `main` this week: Week 4 starts from this branch, and the last ParkPulse session brings everything into `main`.
+Push your finished Week 3 work to `Week_3`:
 ```bash
 git add README.md src/parkpulse.py
 git commit -m "Complete Week 3 interactive ParkPulse"
 git push origin Week_3
+```
+
+## 9. Ship it: ParkPulse on `main`
+
+ParkPulse ends with Week 3. This is the only time you merge into `main`, and it brings Weeks 1–3 together.
+
+**1. Clean up `src/parkpulse.py`.** Delete every `TODO` note in the docstrings and comments (keep the real docstrings). This must print nothing:
+```bash
+grep -n "TODO" src/parkpulse.py
+```
+**2. Merge into `main`.** Run each command by itself (in the menu, choose 5, then Y, to leave):
+```bash
+git rm -r -q --ignore-unmatch practice
+git add README.md src/parkpulse.py
+git commit -m "ParkPulse: Weeks 1-3"
+git push origin Week_3
+git switch main
+git pull --ff-only origin main
+git merge --no-edit Week_3
+python3 src/parkpulse.py
+git push origin main
+```
+**3. Write the project README on `main`.** Replace this weekly README (same file, `README.md`) with these sections:
+- **Stakeholder and business problem:** who uses ParkPulse (a job title), what they decide with it, and what goes wrong without it.
+- **Goal of the script:** one sentence that starts with a verb, then what it does (the menu options) and what it doesn't do yet.
+- **How to run:** `python3 src/parkpulse.py`
+- **Testing and edge cases:** a table of what you typed, what you expected, and what happened. Use your 8 Task E cases.
+- **How I used AI (and checked it):** what you asked, what you ran, and what you kept or rejected, and why.
+
+**4. Push and test.** Commit the README on `main`, push, then clone your repo into a new folder and follow your own How to run. Pin `parkpulse` on your GitHub profile.
+```bash
+git add README.md
+git commit -m "Add project README"
+git push origin main
 ```
